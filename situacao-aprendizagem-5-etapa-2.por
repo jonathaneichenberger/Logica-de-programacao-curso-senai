@@ -125,7 +125,7 @@ programa
 		
 		se(ponteiro > 0)
 		{	
-			escreva("\nPaciente ", paciente[0], " favor comparecer ao consultório 0", consultorio, " para atendimento com o ", medico[consultorio], " !\n")
+			escreva("\nPaciente ", paciente[0], " favor comparecer ao consultório 0", consultorio + 1, " para atendimento com o ", medico[consultorio], " !\n")
 			
 			para(n = 0; n < ponteiro - 1; n++)
 			{
@@ -296,7 +296,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1300; 
+ * @POSICAO-CURSOR = 3369; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
