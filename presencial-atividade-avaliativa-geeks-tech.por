@@ -9,17 +9,24 @@ Atividade: Ativividade avaliativa Lógica Computacional - Geeks Tech
 */
 programa
 {
+	inclua biblioteca Tipos --> t
+	inclua biblioteca Util --> u
+
 	const inteiro tamanho = 5
 	
 	funcao inicio()
 	{			
-		inteiro opcao = 0
+		caracter opcao = ' '
 		
 		menu(opcao)
+
+		
 	}
 
-	funcao inteiro menu(inteiro opcao_menu)
+	funcao caracter menu(caracter opcao_menu)
 	{
+		limpa()
+		
 		escreva("+========================================================+\n")
 		escreva("   BEM VINDO A GEEKS TECH - SELECIONE UMA OPÇÃO DO MENU\n")
 		escreva("+========================================================+\n")
@@ -44,16 +51,42 @@ programa
 		escreva("+--------------------------------------------------------+\n")
 		escreva("Opção: ")
 		leia(opcao_menu)
+
+		verificar_caracter_valido(opcao_menu)
 		
 		retorne opcao_menu
 	}
+
+	funcao caracter verificar_caracter_valido(caracter opcao_menu_valido)
+	{
+		caracter navegar_para_menu
+		
+		se(t.caracter_e_inteiro(opcao_menu_valido) == verdadeiro)
+		{
+			retorne opcao_menu_valido
+		}
+		senao
+		{
+			limpa()
+
+			escreva("ATENÇÃO: Letras não podem ser usadas para acessar o menu.\n\n\n\n\n")
+			escreva("============ TECLE ENTER PARA VOLTAR AO MENU ===============\n")
+			leia(navegar_para_menu)
+
+			opcao_menu_valido = ' '
+			
+			retorne opcao_menu_valido
+		}
+	}
+
+	
 }
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 320; 
+ * @POSICAO-CURSOR = 2664; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
