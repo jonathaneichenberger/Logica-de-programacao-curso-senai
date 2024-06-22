@@ -12,13 +12,58 @@ programa
 	inclua biblioteca Tipos --> t
 	inclua biblioteca Util --> u
 
-	const inteiro tamanho = 5
+	const inteiro cadastros = 5
+	const inteiro propriedades = 4
+	
+	cadeia cadastro_equipamento[cadastros][propriedades]
+	inteiro fila_cheia = - 1	
 	
 	funcao inicio()
-	{			
+	{	
+		
 		caracter opcao = ' '
+		inteiro contador = 0
+		
+		
 		
 		menu(opcao)
+
+		escolha(opcao){
+			
+			caso '1':{
+				
+				cadastrar_equipamentos(contador)
+				pare
+			}
+			caso '2':{
+				
+				pare
+			}
+			caso '3':{
+				
+				pare
+			}
+			caso '4':{
+				
+				pare
+			}
+			caso '5':{
+				
+				pare
+			}
+			caso '6':{
+				
+				pare
+			}
+			caso '7':{
+				
+				pare
+			}
+			caso '8':{
+				
+				pare
+			}
+		}
 
 		
 	}
@@ -61,12 +106,12 @@ programa
 	{
 		caracter navegar_para_menu
 		
-		se(t.caracter_e_inteiro(opcao_menu_valido) == verdadeiro)
-		{
+		se(t.caracter_e_inteiro(opcao_menu_valido) == verdadeiro){
+			
 			retorne opcao_menu_valido
-		}
-		senao
-		{
+			
+		}senao{
+			
 			limpa()
 
 			escreva("ATENÇÃO: Letras não podem ser usadas para acessar o menu.\n\n\n\n\n")
@@ -79,6 +124,54 @@ programa
 		}
 	}
 
+	funcao inteiro cadastrar_equipamentos(inteiro contador_equipamentos)
+	{
+		inteiro fila_cheia_verificada = 0
+
+		limpa()
+		escreva("+========================================================+\n")
+		escreva("        GEEKS TECH - CADASTRAR NOVO EQUIPAMENTO\n")
+		escreva("+========================================================+\n")
+		
+		verificar_fila_cheia(contador_equipamentos, fila_cheia_verificada)
+
+		se(fila_cheia_verificada <= 1)
+		{
+			para(inteiro i = 0; i < propriedades; i++)
+			{
+				limpa()
+				escreva("PAUSA PARA O CAFÉ \n")
+				
+				leia(cadastro_equipamento[contador_equipamentos][i])
+
+				
+				
+				
+			}
+			
+		}
+		
+		retorne contador_equipamentos
+	}
+
+	funcao inteiro verificar_fila_cheia(inteiro contador_equipamentos, inteiro fila_cheia_verificada)
+	{
+		se(fila_cheia == contador_equipamentos - 1){
+
+			fila_cheia_verificada = 0
+			retorne fila_cheia_verificada 
+			
+		}senao se(fila_cheia == cadastros - 1){
+			fila_cheia_verificada = 2
+			retorne fila_cheia_verificada
+		}senao{
+			
+			fila_cheia_verificada = 1
+			retorne fila_cheia_verificada
+		}
+		
+	}
+
 	
 }
 /* $$$ Portugol Studio $$$ 
@@ -86,7 +179,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2664; 
+ * @POSICAO-CURSOR = 3681; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
