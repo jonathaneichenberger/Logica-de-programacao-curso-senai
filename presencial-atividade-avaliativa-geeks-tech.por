@@ -9,28 +9,32 @@ Atividade: Ativividade avaliativa Lógica Computacional - Geeks Tech
 */
 programa
 {
-	inclua biblioteca Tipos --> t
+	inclua biblioteca Teclado --> t
+	inclua biblioteca Tipos --> tp
 	inclua biblioteca Util --> u
 
 	const inteiro cadastros = 5
 	const inteiro propriedades = 4
 	
 	cadeia cadastro_equipamento[cadastros][propriedades]
-	inteiro fila_cheia = - 1	
+		
 	
 	funcao inicio()
 	{	
-		
-		caracter opcao = ' '
+		inteiro status_fila = 0
+		caracter opcao = '0'
 		inteiro contador = 0
 		
-		
-		
-		menu(opcao)
-
 		escolha(opcao){
-			
+
+			caso '0':{
+				
+				menu(opcao)
+				pare
+			}
 			caso '1':{
+				
+				verificar_status_fila(contador, status_fila)
 				
 				cadastrar_equipamentos(contador)
 				pare
@@ -68,7 +72,7 @@ programa
 		
 	}
 
-	funcao caracter menu(caracter opcao_menu)
+	funcao caracter menu(caracter opcao)
 	{
 		limpa()
 		
@@ -95,36 +99,33 @@ programa
 		escreva("| 8 | Sair do Sistema                                    |\n")
 		escreva("+--------------------------------------------------------+\n")
 		escreva("Opção: ")
-		leia(opcao_menu)
+		leia(opcao)
 
-		verificar_caracter_valido(opcao_menu)
+		verificar_caracter_valido(opcao)
 		
-		retorne opcao_menu
+		retorne opcao
 	}
 
-	funcao caracter verificar_caracter_valido(caracter opcao_menu_valido)
+	funcao caracter verificar_caracter_valido(caracter opcao)
 	{
-		caracter navegar_para_menu
 		
-		se(t.caracter_e_inteiro(opcao_menu_valido) == verdadeiro){
+		se(tp.caracter_e_inteiro(opcao) == verdadeiro){
 			
-			retorne opcao_menu_valido
+			retorne opcao
 			
 		}senao{
 			
 			limpa()
 
 			escreva("ATENÇÃO: Letras não podem ser usadas para acessar o menu.\n\n\n\n\n")
-			escreva("============ TECLE ENTER PARA VOLTAR AO MENU ===============\n")
-			leia(navegar_para_menu)
 
-			opcao_menu_valido = ' '
-			
-			retorne opcao_menu_valido
+			voltar_com_enter(opcao)
+
+			retorne opcao
 		}
 	}
 
-	funcao inteiro cadastrar_equipamentos(inteiro contador_equipamentos)
+	funcao inteiro cadastrar_equipamentos(inteiro contador)
 	{
 		inteiro fila_cheia_verificada = 0
 
@@ -133,7 +134,7 @@ programa
 		escreva("        GEEKS TECH - CADASTRAR NOVO EQUIPAMENTO\n")
 		escreva("+========================================================+\n")
 		
-		verificar_fila_cheia(contador_equipamentos, fila_cheia_verificada)
+		
 
 		se(fila_cheia_verificada <= 1)
 		{
@@ -142,33 +143,53 @@ programa
 				limpa()
 				escreva("RETORNANDO DO CAFÉ \n")
 				
-				leia(cadastro_equipamento[contador_equipamentos][i])
+				leia(cadastro_equipamento[contador][i])
 
-				
-				
-				
 			}
 			
 		}
 		
-		retorne contador_equipamentos
+		retorne contador
 	}
 
-	funcao inteiro verificar_fila_cheia(inteiro contador_equipamentos, inteiro fila_cheia_verificada)
+	funcao inteiro verificar_status_fila(inteiro contador, inteiro status_fila)
 	{
-		se(fila_cheia == contador_equipamentos - 1){
+		inteiro fila_cheia = -1
+		
+		
+		se(fila_cheia == contador - 1){
 
-			fila_cheia_verificada = 0
-			retorne fila_cheia_verificada 
+			status_fila = 0
+			retorne status_fila 
 			
 		}senao se(fila_cheia == cadastros - 1){
-			fila_cheia_verificada = 2
-			retorne fila_cheia_verificada
+			
+			status_fila = 2
+			retorne status_fila
+			
 		}senao{
 			
-			fila_cheia_verificada = 1
-			retorne fila_cheia_verificada
+			status_fila = 1
+			retorne status_fila
 		}
+		
+	}
+
+	funcao caracter voltar_com_enter(caracter opcao)
+	{
+		escreva("============ TECLE ENTER PARA VOLTAR AO MENU ===============\n")
+			
+			opcao = '0'
+			
+			se(t.tecla_pressionada(t.TECLA_ENTER))
+			{
+				
+				
+				
+			}
+
+		
+		retorne opcao
 		
 	}
 
@@ -179,8 +200,8 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3676; 
- * @PONTOS-DE-PARADA = ;
+ * @POSICAO-CURSOR = 4111; 
+ * @PONTOS-DE-PARADA = 184;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
