@@ -28,6 +28,7 @@ programa
 		}
 	inteiro contador = 0
 	inteiro status_fila = 0
+	inteiro contador_consertados = 0
 	
 	funcao inicio()
 	{	
@@ -69,6 +70,7 @@ programa
 			}
 			caso '7':{
 				
+				equipamentos_consertados()
 				pare
 			}
 			caso '8':{
@@ -230,7 +232,7 @@ programa
 				
 				para(inteiro i = 0; i < contador - 1; i++)
 				{
-					para(inteiro n = 0; n < propriedades; n++)
+					para(inteiro n = 0; n < propriedades ; n++)
 					{
 						se(i == 0)
 						{
@@ -246,8 +248,9 @@ programa
 				limpa()
 				escreva("Manutenção realizada com sucesso!\n\n")
 				escreva("Qual o valor que será cobrado pelo serviço? R$:")
+				leia(equipamento_consertado[contador_consertados][4])
+				contador_consertados++
 				
-
 				voltar_com_enter()
 				
 			}senao{
@@ -322,6 +325,27 @@ programa
 		inicio()	
 	}
 
+	funcao equipamentos_consertados()
+	{
+		limpa()
+		escreva("+========================================================+\n")
+		escreva("|      GEEKS TECH - LISTAR EQUIPAMENTOS CONSERTADOS      |\n")
+		escreva("+========================================================+\n\n")
+		
+		para(inteiro i = 0; i < contador - 1; i++)
+		{
+			para(inteiro n = 0; n < propriedades; n++)
+			{
+				escreva(atributos[n])
+				escreva(equipamento_consertado[i][n])
+				
+			}
+			escreva("\n----------------------------------------------------------------\n")
+		}
+		
+		voltar_com_enter()
+	}
+
 	
 }
 /* $$$ Portugol Studio $$$ 
@@ -329,7 +353,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 6171; 
+ * @POSICAO-CURSOR = 6322; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {cadastro_equipamento, 19, 8, 20}-{equipamento_consertado, 20, 8, 22}-{contador, 29, 9, 8};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
