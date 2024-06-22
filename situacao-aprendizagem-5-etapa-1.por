@@ -4,7 +4,7 @@ Curso: Desenvolvimento de sistemas
 Módulo: Lógica de Programação
 Professor: Christian Daniel Licnerski Marques Pinheiro
 Tipo de Entrega: Avaliativa
-Atividade: Stiuação de Aprendizagem 5 - Etapa 1
+Atividade: Situação de Aprendizagem 5 - Etapa 1
 */
 
 programa
@@ -58,7 +58,7 @@ programa
 				caso contrario:
 				{
 					escreva("\nATENÇÃO: Opção inválida!")
-					u.aguarde(3000)
+					u.aguarde(2000)
 					menu()						
 					pare
 				}
@@ -295,7 +295,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 5298; 
+ * @POSICAO-CURSOR = 203; 
  * @DOBRAMENTO-CODIGO = [157];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;

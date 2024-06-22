@@ -4,7 +4,7 @@ Curso: Desenvolvimento de sistemas
 Módulo: Lógica de Programação
 Professor: Christian Daniel Licnerski Marques Pinheiro
 Tipo de Entrega: Avaliativa
-Atividade: Stiuação de Aprendizagem 5 - Etapa 2
+Atividade: Situação de Aprendizagem 5 - Etapa 2
 */
 
 programa
@@ -12,7 +12,7 @@ programa
 	inclua biblioteca Texto --> t
 	inclua biblioteca Util --> u
 
-	const inteiro total = 3
+	const inteiro total = 25
 	
 	cadeia   paciente[total], msg, enter
 	caracter opcao, resposta
@@ -296,7 +296,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3369; 
+ * @POSICAO-CURSOR = 203; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
