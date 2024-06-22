@@ -140,7 +140,7 @@ programa
 			para(inteiro i = 0; i < propriedades; i++)
 			{
 				limpa()
-				escreva("PAUSA PARA O CAFÉ \n")
+				escreva("RETORNANDO DO CAFÉ \n")
 				
 				leia(cadastro_equipamento[contador_equipamentos][i])
 
@@ -179,7 +179,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3681; 
+ * @POSICAO-CURSOR = 3676; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
